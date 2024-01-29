@@ -26,24 +26,11 @@ console.log(findWords()); // output: [ 'Max' ]
 /*Write a fucntion that takes in an array and removes every even index with a splice,
 and replaces it with the string "even index" */
 
-Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
+const NewElement = "NewElement";
 
-function replaceEvens(arr){
-    // Use the map() method to iterate over each element in the array
-    return arr.map((element, index) => {
-        // If the index is even, replace the element with a new string
-        if (index % 2 === 0) {
-            return "NewElement";
-        }
-        // Otherwise, keep the original element
-        return element;
-    });
-}
+const arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"];
 
-let arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"];
-let newArr = replaceEvens(arr);
+const replaceEvens = arr => arr.map((element, index) => index % 2 === 0 ? NewElement : element);
+
+const newArr = replaceEvens(arr);
 console.log(newArr);
-
-//Expected output
-//Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
-//Output arr == ["even index","Baseball","even index","Goku","even index","Rodger"]
